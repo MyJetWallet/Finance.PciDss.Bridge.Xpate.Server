@@ -1,0 +1,10 @@
+image: mcr.microsoft.com/dotnet/sdk:5.0-alpine
+
+variables:
+  BUILD_FOLDER: Finance.PciDss.Bridge.Xpate.Server
+  DOCKER_IMAGE_TAG: monfex/pci-dss-bridge-xpate-server
+
+include:
+  - project: 'MONFEX-DEVOPS/infrastructure_builder'
+    ref: master
+    file: '/.gitlab-ci.yml'
