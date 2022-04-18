@@ -1,10 +1,8 @@
-FROM mcr.microsoft.com/dotnet/sdk:5.0-alpine
+FROM mcr.microsoft.com/dotnet/aspnet:6.0-bullseye-slim
 WORKDIR /app
-COPY /app /app
-
-ARG app_version
+COPY . .
 ARG app_compilation_date
-ENV APP_VERSION=${app_version}
+ARG app_version
 ENV APP_COMPILATION_DATE=${app_compilation_date}
-
+ENV APP_VERSION=${app_version}
 ENTRYPOINT ["dotnet", "Finance.PciDss.Bridge.Xpate.Server.dll"]
